@@ -6,10 +6,9 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+//Check App looks like this for you now
 export default function App() {
-
   const classes = useStyles();
- 
   return (
     <div className={classes.app}>
         <p>
