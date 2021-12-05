@@ -11,13 +11,10 @@ export default function App() {
   const classes = useStyles();
  
   return (
-    <div className="App">
-      <header className={classes.app}>
+    <div className={classes.app}>
         <p>
           Let's start writing our todo app! 
         </p>
-        
-      </header>
     </div>
   );
 }
