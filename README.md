@@ -1,8 +1,16 @@
-# Getting Started with Create React App
+# Todo App
+
+## Component Hierarchy
+- Header 
+- TaskContainer
+    - Add Task
+        - Task List 
+            - Task 
+    - Total Completed
+        - Task List  
+            - Task
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
