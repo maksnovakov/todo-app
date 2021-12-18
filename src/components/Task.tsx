@@ -1,3 +1,11 @@
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+        paddingLeft: '20px',
+    }  
+}));
+
 interface TaskProps {
     title: string;
     completed: boolean;
@@ -5,7 +13,11 @@ interface TaskProps {
 };
 
 export default function Task(props: TaskProps) {
+    const classes = useStyles();
+    
     return (
-        <p key={props.id}> {props.title} </p>                  
+       <div className={classes.container}>     
+            <p key={props.id}> {props.title} </p>   
+       </div>               
     )
 }

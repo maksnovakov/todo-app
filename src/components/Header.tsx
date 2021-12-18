@@ -1,8 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { amber } from '@mui/material/colors';
 
 const useStyles = makeStyles(() => ({
     greeting: {
-        color: '#FFD08D',
+        color: `${amber[200]}`,
         fontFamily: 'Roboto',
         fontSize: '64px',
         fontStyle: 'normal',

@@ -7,7 +7,7 @@ import background from './images/sunrise.jpeg';
 
 const useStyles = makeStyles(() => ({
   app: {
-    textAlign: 'center',
+    // textAlign: 'center',
     background: `url(${background}) no-repeat center`,
     backgroundSize: 'cover',
     position: 'fixed',
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     minWidth: '100%',
     top: '0',
     left: '0', 
-    placeItems: 'center'
+    // placeItems: 'center'
   },
 }));
 
@@ -31,9 +31,9 @@ export default function App() {
   // }, []);
 
   return (
-    <Grid className={classes.app}>
+    <div className={classes.app}>
         <Header userName={userName}/> 
         <TaskContainer/>
-    </Grid>
+    </div>
   );
 }

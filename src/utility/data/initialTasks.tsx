@@ -1,4 +1,4 @@
-import {TaskStructure} from '../utility/types';
+import {TaskStructure} from '../types';
 
 export const INITIAL_TASKS: TaskStructure[] =  [
     {
