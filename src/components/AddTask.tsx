@@ -22,34 +22,42 @@ interface AddTaskProps {
     addTaskToList: (text: string) => void;
 }
 
-export default function AddTask(props: AddTaskProps) {
+const AddTask = (props: AddTaskProps) => {
     const classes = useStyles();
     const [newTaskText, setNewTaskText] = useState("");
+    const {addTaskToList} = props;
 
     const handleAddingTask = (event: any) => {
         if(event.charCode === 13){ 
-            props.addTaskToList(newTaskText); 
+            addTaskToList(newTaskText); 
             setNewTaskText("") 
         }
     }
 
     const handleIconAdd = () => {
         if(newTaskText.length > 0){
-            props.addTaskToList(newTaskText); 
+            addTaskToList(newTaskText); 
             setNewTaskText("") 
         }
     }
 
+    const updateNewTask = (event: any) => {
+        setNewTaskText(event.target.value)
+    }
+
     return (
         <div className={classes.addContainer}>     
-            <AddIcon className={classes.icon} onClick={handleIconAdd}/>
+            <AddIcon data-testid="add-icon" className={classes.icon} onClick={handleIconAdd}/>
             <TextField
+                data-testid="task-input"
                 fullWidth
-                onChange={e => setNewTaskText(e.target.value)} 
+                onChange={updateNewTask} 
                 value={newTaskText} 
-                label={"What's on you mind today?"} 
+                label={"What's on your mind today?"} 
                 onKeyPress={handleAddingTask} 
             />
         </div>
     )
 }
+
+export default AddTask;

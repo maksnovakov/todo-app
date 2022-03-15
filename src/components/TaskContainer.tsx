@@ -5,6 +5,8 @@ import { INITIAL_TASKS } from '../utility/data/initialTasks';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@mui/material';
 
+const { v4: uuid } = require('uuid');
+
 const useStyles = makeStyles((theme) => ({
     container: {
         justifyContent: 'center',
@@ -16,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function TaskContainer() {
+const TaskContainer = () => {
     const classes = useStyles();
     const [tasks, setTasks] = useState(INITIAL_TASKS);
     
     const addTaskToList = (title:string) => {
-        const addTask = { title: title, completed: false};
+        const addTask = { title: title, completed: false, id: uuid()};
         setTasks([...tasks, addTask]);
     };
 
@@ -31,10 +33,14 @@ export default function TaskContainer() {
                 <AddTask addTaskToList={addTaskToList}/>   
             </Grid>
             <Grid item xs={11.8} sm={7.8} className={classes.taskList}>
-                {tasks.map( (task, i) => (
-                    <Task title= {task.title} id={i} completed={task.completed}/>                  
+                {tasks.map( (task) => (
+                    <div key={task.id}>
+                        <Task title= {task.title} completed={task.completed}/>                  
+                    </div>
                 ))}
             </Grid>
         </Grid>
     )
 }
+
+export default TaskContainer;

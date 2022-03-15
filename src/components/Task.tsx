@@ -9,15 +9,16 @@ const useStyles = makeStyles((theme) => ({
 interface TaskProps {
     title: string;
     completed: boolean;
-    id: number;
 };
 
-export default function Task(props: TaskProps) {
+const Task = (props: TaskProps) => {
     const classes = useStyles();
     
     return (
        <div className={classes.container}>     
-            <p key={props.id}> {props.title} </p>   
+            <p> {props.title} </p>   
        </div>               
     )
 }
+
+export default Task;
