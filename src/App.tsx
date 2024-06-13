@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
 
 export default function App() {
   const classes = useStyles(); 
-  const [userName, setUserName] = useState("Sofia"); 
+  const [userName, setUserName] = useState("Maks"); 
   
   // useEffect(()=> {
   //   const name = prompt("What's your name?"); 
